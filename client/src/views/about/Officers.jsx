@@ -34,7 +34,7 @@ class About extends Component {
       "0": "Photography"
     }
   }
-  
+
   changeView(committee) {
     if (this.currentCommittee == committee) {
       return;
@@ -76,7 +76,7 @@ class About extends Component {
 
     if (key in this.committeeDict && this.committeeDict[key] in officerData) {
       let people = officerData[this.committeeDict[key]];
-      
+
 
       while (grid.children.length > 0) {
         grid.children[0].remove();
@@ -87,13 +87,13 @@ class About extends Component {
         let val = Object.values(people[i])[0];
         let name = val.replaceAll(" ", "_");
         let imgPath = name.toLowerCase() + ".jpg";
-        
+
         let div = document.createElement("div");
         div.classList = "officer-container cboxElement";
         let tileImg = document.createElement("div");
         tileImg.classList = "tile";
         let img = document.createElement("img");
-        
+
         img.setAttribute('src', tryAndDefault(this.committeeDict[this.currentCommittee], imgPath));
         tileImg.appendChild(img);
         div.appendChild(tileImg);
@@ -134,7 +134,7 @@ class About extends Component {
         </div>
         <div className="content">
           <div className="left">
-            <div id="face-grid" 
+            <div id="face-grid"
               style={{ display: "block" }}>
               <div className="officer-container cboxElement">
                 <div className="tile"><img src={tryAndDefault("Exec", "neeli_tummala.jpg")} /></div>
@@ -164,6 +164,12 @@ class About extends Component {
                 <div className="tile"><img src={tryAndDefault("Exec", "kevin_ma.jpg")} /></div>
                 <div className="tile salutation">
                   <div className="left-align"><span>Kevin Ma</span><span className="rank">Secretary</span></div>
+                </div>
+              </div>
+              <div className="officer-container cboxElement">
+                <div className="tile"><img src={tryAndDefault("Exec", "rob_thalanki.jpg")} /></div>
+                <div className="tile salutation">
+                  <div className="left-align"><span>Rob Thalanki</span><span className="rank">Treasury Intern</span></div>
                 </div>
               </div>
             </div>
@@ -219,7 +225,7 @@ class About extends Component {
               </span>
               <div className="committee-description ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-accordion-1-panel-5" aria-labelledby="ui-accordion-1-header-5" role="tabpanel" aria-expanded="false" aria-hidden="true" style={{display: "none"}}>
               <p>
-              Micromouse serves as the backbone for developing our decal around creating an autonomous mouse used to navigate a maze.  
+              Micromouse serves as the backbone for developing our decal around creating an autonomous mouse used to navigate a maze.
               </p>
               </div>
             </li>
@@ -263,7 +269,7 @@ class About extends Component {
               </p>
               </div>
             </li>
-            
+
             </ul>
 
           </div>
@@ -274,5 +280,3 @@ class About extends Component {
 }
 
 export default About;
-
-
